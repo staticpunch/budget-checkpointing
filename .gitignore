@@ -1,1 +1,3 @@
 /model_hub/*
+__pycache__/
+.ipynb_checkpoints/
