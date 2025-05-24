@@ -1,0 +1,29 @@
+# Model configuration
+model_name_or_path: "/workspace/budget-checkpointing/model_hub/Llama-3.2-1B-Instruct/"
+
+# Dataset configuration
+dataset_configs:
+  /workspace/data/reasoning/mini-stratos-11k:
+  
+train_split: train
+max_length: 512
+
+
+# Training parameters
+output_dir: /workspace/budget-checkpointing/model_hub/sft-1b
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 8
+gradient_accumulation_steps: 64
+lr_scheduler: cosine
+learning_rate: 5e-3
+num_train_epochs: 3
+save_steps: 100
+eval_steps: 5000
+logging_steps: 10
+eval_strategy: steps
+report_to: none
+remove_unused_columns: false
+logging_first_step: true
+bf16: true
+gradient_checkpointing: false
+train_on_inputs: true
